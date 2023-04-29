@@ -1,0 +1,10 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<ul class="list-group">
+    
+    <li class="list-group-item">Ryan Figueiredo</li>
+    <li class="list-group-item">1290482123016</li>
+    <li class="list-group-item"><a class="btn btn-info" style="color:#fff" href="/Servlets">Ir para página inicial</a></li>
+    
+</ul>

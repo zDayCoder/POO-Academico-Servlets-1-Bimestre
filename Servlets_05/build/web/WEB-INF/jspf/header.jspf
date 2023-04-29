@@ -1,0 +1,13 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<h2>zDay Application</h2>
+
+    <div class="row mx-md-n5">
+        <ul class="list-group list-group-horizontal mx-auto">
+
+            <li class="list-group-item list-group-item-info"><a href="/Servlets/page1.jsp">Página Javerson</a></li>
+            <li class="list-group-item list-group-item-info"><a href="/Servlets/page2.jsp">Página Pytherson</a></li>
+            <li class="list-group-item list-group-item-info"><a href="/Servlets/page3.jsp">Página É Os Gury</a></li>
+
+        </ul>
+    </div>
