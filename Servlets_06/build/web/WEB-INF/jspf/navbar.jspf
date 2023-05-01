@@ -1,0 +1,64 @@
+<%@ page pageEncoding="UTF-8" %>
+<%
+    if(application.getAttribute("users")==null) {
+        application.setAttribute("users", new java.util.ArrayList());
+    }
+
+    java.util.ArrayList<String> users = (java.util.ArrayList) application.getAttribute("users");
+
+    if(request.getParameter("session-login") !=null){
+        session.setAttribute("name", request.getParameter("session-name"));
+        users.add((String) session.getAttribute("name"));
+        response.sendRedirect(request.getRequestURI());
+    } else if (request.getParameter("session-logout") !=null){
+        int i = users.indexOf((String) session.getAttribute("name"));
+        session.removeAttribute("name");
+        if(i>=0) users.remove(i);
+        response.sendRedirect(request.getRequestURI());
+    }
+
+    String userName = (String) session.getAttribute("name");
+
+%>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">
+        <i class="bi bi-people-fill"></i>
+        SessionApp
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="${pageContext.request.contextPath}/users.jsp">Usuarios</a>
+            </li>
+
+            <% if(userName != null) {%>
+
+            <form class="d-flex">
+
+                <span class="navbar-text me-2"> Olá, <%=   userName %> </span>
+                <button class="btn btn-outline-success" type="submit" name="session-logout">Sair</button>
+
+            </form>
+
+            <%}%>
+
+        </ul>
+    </div>
+</nav>
+
+<% if(userName == null) {%>
+
+<div class="m-2">
+    <%@include file="login-form.jspf"%>
+</div>
+
+<% } %>
