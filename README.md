@@ -4,7 +4,7 @@
 
 ## Descrição do projeto
 
-Projetos realizados na matéria de programação orientada a objeto utilizando conceitos java para web. :satisfied:
+Projetos realizados na matéria de programação orientada a objeto utilizando conceitos Java para web. :satisfied:
 
 ## 🧑‍💻 Desenvolvedor do Projeto 🧑‍💻 
 
